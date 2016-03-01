@@ -24,6 +24,8 @@ import android.webkit.WebSettings.RenderPriority;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.appsflyer.AppsFlyerLib;
+
 import de.cketti.library.changelog.ChangeLog;
 
 public class MainActivity extends Activity {
@@ -80,6 +82,9 @@ public class MainActivity extends Activity {
         if (cl.isFirstRun()) {
             cl.getLogDialog().show();
         }
+
+        AppsFlyerLib.setAppsFlyerKey("BsiTgr2dPMkZZK8QEUJPfh");
+        AppsFlyerLib.sendTracking(getApplicationContext());
 
         // Load webview with game
         mWebView = (WebView) findViewById(R.id.mainWebView);
