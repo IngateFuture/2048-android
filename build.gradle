@@ -1,15 +1,15 @@
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.0.0-alpha3'
+        classpath 'com.android.tools.build:gradle:2.0.0-beta6'
     }
 }
 apply plugin: 'com.android.application'
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -20,7 +20,6 @@ dependencies {
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
@@ -43,5 +42,7 @@ android {
         // by a similar customization.
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
+    }
+    buildTypes {
     }
 }
